@@ -46,17 +46,7 @@ class Livro:
     """
     
     def __init__(self, titulo: str, autor: str, isbn: str) -> None:
-        """
-        Inicializa um novo livro com validações.
-        
-        Args:
-            titulo: Título do livro (obrigatório)
-            autor: Nome do autor (obrigatório)
-            isbn: Código ISBN (obrigatório)
-        
-        Raises:
-            ValueError: Se titulo, autor ou isbn estiverem vazios
-        """
+      
         self._validar_campo(titulo, "Título")
         self._validar_campo(autor, "Autor")
         self._validar_campo(isbn, "ISBN")
@@ -68,47 +58,23 @@ class Livro:
     
     @staticmethod
     def _validar_campo(valor: str, nome_campo: str) -> None:
-        """
-        Valida se um campo não está vazio.
-        
-        Args:
-            valor: Valor a ser validado
-            nome_campo: Nome do campo para mensagem de erro
-        
-        Raises:
-            ValueError: Se o valor estiver vazio
-        """
+  
         if not valor or not valor.strip():
             raise ValueError(f"{nome_campo} é obrigatório")
     
     def emprestar(self) -> None:
-        """
-        Marca o livro como emprestado.
-        """
         self.status = STATUS_EMPRESTADO
     
     def devolver(self) -> None:
-        """
-        Marca o livro como disponível (devolução).
-        """
+       
         self.status = STATUS_DISPONIVEL
     
     def esta_disponivel(self) -> bool:
-        """
-        Verifica se o livro está disponível para empréstimo.
-        
-        Returns:
-            bool: True se disponível, False caso contrário
-        """
+ 
         return self.status == STATUS_DISPONIVEL
     
     def __repr__(self) -> str:
-        """
-        Representação legível do objeto Livro.
-        
-        Returns:
-            str: Representação formatada do livro
-        """
+
         return f"Livro(titulo='{self.titulo}', autor='{self.autor}', isbn='{self.isbn}', status='{self.status}')"
 
 

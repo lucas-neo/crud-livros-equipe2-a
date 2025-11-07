@@ -5,7 +5,7 @@ Esses testes foram escritos ANTES do código (TDD Red)
 """
 
 import pytest
-from livro import Livro, criar_livro, listar_livros, buscar_livro_por_isbn, atualizar_livro, deletar_livro, _limpar_db
+from old.livro import Livro, criar_livro, listar_livros, buscar_livro_por_isbn, atualizar_livro, deletar_livro, _limpar_db
 
 @pytest.fixture(autouse=True)
 def limpar_base_de_dados_a_cada_teste():
